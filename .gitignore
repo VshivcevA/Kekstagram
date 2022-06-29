@@ -1,2 +1,13 @@
-# Project exclude paths
-/node_modules/
+.DS_Store
+.idea
+*.ai
+*.log
+*.pdf
+*.psd
+*.sublime*
+build/
+node_modules/
+npm-debug.log*
+Thumbs.db
+.vscode/
+test.js
