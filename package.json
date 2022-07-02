@@ -3,6 +3,7 @@
   "version": "22.0.0",
   "private": true,
   "description": "Личный проект «kekstagram» от HTML Academy",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "{{sshUrl}}"
@@ -13,10 +14,12 @@
   "devDependencies": {
     "browser-sync": "2.26.14",
     "eslint": "7.18.0",
-    "eslint-config-htmlacademy": "2.0.0"
+    "eslint-config-htmlacademy": "2.0.0",
+    "module": "^1.2.5",
+    "prettier": "^2.7.1",
+    "type": "^2.6.0"
   },
   "license": "MIT",
-  "dependencies": {},
   "scripts": {
     "start": "browser-sync start --server --no-ui --files \"js/**/*.js\"",
     "test": "eslint js/"
