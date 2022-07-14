@@ -1,3 +1,5 @@
-import { photoDescriptions } from './data.js';
+import { newPreview } from "./photo-render.js";
+import { uploadEditor} from "./uploadEditor.js";
 
-photoDescriptions;
+newPreview();
+uploadEditor()

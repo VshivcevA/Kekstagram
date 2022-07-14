@@ -1,5 +1,6 @@
 import { getRandomArrayElement, getRandomNumber } from './util.js';
 
+// const photos = []
 const ARRAY_LENGHT = 25;
 const Likes = {
   MIN: 15,
@@ -7,7 +8,7 @@ const Likes = {
 };
 const Comments = {
   MIN: 1,
-  MAX: 3,
+  MAX: 6,
 };
 
 const MESSAGES= [
@@ -35,6 +36,23 @@ const DESCRIPTION_PHOTO= [
   'Из архива',
 ];
 
+let commentId = 0;
+const getCommentId = () => {
+  commentId++
+  return commentId
+};
+
+let createComment = () => {
+  // const id = getRandomNumber(Comments.MIN, Comments.MAX)
+  const id = getCommentId()
+  return {
+    id: id,
+    avatar: 'img/avatar-'+ id +'.svg',
+    message: getRandomArrayElement(MESSAGES),
+    name: getRandomArrayElement(NAMES),
+  }
+};
+
 let photoId = 0;
 const getPhotoId = () => {
   photoId++
@@ -42,6 +60,7 @@ const getPhotoId = () => {
 };
 
 let createPhotoDescription = () => {
+  commentId = 0
   const id = getPhotoId()
   return {
     id: id,
@@ -52,25 +71,8 @@ let createPhotoDescription = () => {
   }
 };
 
-let commentId = 0;
-const getCommentId = () => {
-  commentId++
-  return commentId
-};
+const photoDescriptions  = new Array(ARRAY_LENGHT).fill(null).map(() => createPhotoDescription());
 
-let createComment = () => {
-  commentId = 0
-  const id = getCommentId()
-  return {
-    id: id,
-    avatar: 'img/avatar-'+ id +'.svg',
-    message: getRandomArrayElement(MESSAGES),
-    name: getRandomArrayElement(NAMES),
-  }
-};
+// console.table(photoDescriptions);
 
-const photoDescriptions = new Array(ARRAY_LENGHT).fill(null).map(() => createPhotoDescription());
-
-console.table(photoDescriptions);
-
-export {photoDescriptions};
+export { photoDescriptions };
