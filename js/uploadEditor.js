@@ -1,3 +1,5 @@
+import {validity} from './validity.js'
+
 const Scale = {
   MAX: 100,
   MIN: 25,
@@ -7,15 +9,16 @@ const Scale = {
 const uploadFile = document.querySelector('#upload-file');
 const imgUploadOverlay = document.querySelector('.img-upload__overlay')
 const body = document.querySelector('body')
-let imgUploadPreview = imgUploadOverlay.querySelector('.img-upload__preview img')
+const imgUploadPreview = imgUploadOverlay.querySelector('.img-upload__preview img')
 
 const uploadEditor = () => {
-  uploadFile.addEventListener('click', function (evt) {
-    evt.preventDefault()//убрать, поменять метод на input?, evt
+  uploadFile.addEventListener('change', function () {
     openModal()
-    closeModal()
+
     imgScale()
     effects()
+    validity()
+    closeModal()
   })
 }
 
@@ -25,14 +28,16 @@ const openModal = () => {
 }
 
 const closeModal = () => {
+
   const imgUploadCancel = imgUploadOverlay.querySelector('.img-upload__cancel')
   imgUploadCancel.addEventListener('click', function () {
     imgUploadOverlay.classList.add('hidden')
     body.classList.remove('modal-open');
+
   })
   document.addEventListener('keydown', function (evt) {
-    evt.preventDefault()
     if (evt.keyCode === 27) {
+      evt.preventDefault()
       imgUploadOverlay.classList.add('hidden')
       body.classList.remove('modal-open');
     }
@@ -85,9 +90,12 @@ const effects = () => {
   const effectLevelSlider = imgUploadOverlay.querySelector('.effect-level')
   const sliderElement = effectLevelSlider.querySelector('.effect-level__slider')
   const valueElement = effectLevelSlider.querySelector('.effect-level__value');
+  valueElement.value = 100;
+
   imgUploadPreview.style.filter = "none"
 
   effectLevelSlider.classList.add('hidden')
+
   noUiSlider.create(sliderElement, {
     range: {min: 0, max: 100,},
     start: 100,
@@ -105,8 +113,8 @@ const effects = () => {
       },
     },
   });
-  sliderElement.noUiSlider.on('update', (values, handle) => {
-    valueElement.value = values[handle];
+
+  const styleFilter = () => {
     if (imgUploadPreview.className === 'effects__preview--chrome') {
       imgUploadPreview.style.filter = 'grayscale(' + valueElement.value + ')'
     } else if (imgUploadPreview.className === 'effects__preview--sepia') {
@@ -118,7 +126,21 @@ const effects = () => {
     } else if (imgUploadPreview.className === 'effects__preview--heat') {
       imgUploadPreview.style.filter = 'brightness(' + valueElement.value + ')'
     }
+  }
+
+  sliderElement.noUiSlider.on('update', (values, handle) => {
+    valueElement.value = values[handle];
+    styleFilter()
   })
+
+  // const effects = {
+  //   none: () => {return 'none';},
+  //   chrome: () => {return `grayscale(${parseInt(effectLevelValue.value, 10) * 0.01})`;},
+  //   sepia: () => {return `sepia(${parseInt(effectLevelValue.value, 10) * 0.01})`;},
+  //   marvin: () => {return `invert(${Math.floor(effectLevelValue.value)}%)`;},
+  //   phobos: () => {return `blur(${(parseInt(effectLevelValue.value, 10) * 3) * 0.01}px)`;},
+  //   heat: () => {return `brightness(${(parseInt(effectLevelValue.value, 10) * 3) * 0.01})`;},
+  // };
 
   imgUploadEffects.addEventListener('change', () => {
     effectLevelSlider.classList.remove('hidden')
@@ -160,5 +182,4 @@ const effects = () => {
     }
   });
 }
-
 export { uploadEditor }
