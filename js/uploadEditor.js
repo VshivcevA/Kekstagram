@@ -90,10 +90,10 @@ const effects = () => {
   const effectLevelSlider = imgUploadOverlay.querySelector('.effect-level')
   const sliderElement = effectLevelSlider.querySelector('.effect-level__slider')
   const valueElement = effectLevelSlider.querySelector('.effect-level__value');
+
   valueElement.value = 100;
 
   imgUploadPreview.style.filter = "none"
-
   effectLevelSlider.classList.add('hidden')
 
   noUiSlider.create(sliderElement, {
