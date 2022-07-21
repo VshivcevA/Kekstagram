@@ -14,4 +14,7 @@ let string = 'fsdfsdfdsf';
 let stringLengthCheck = (string) => {
   return string.length < stringLengthMax;
 }
+
+
+
 export {getRandomArrayElement, getRandomNumber, stringLengthCheck};

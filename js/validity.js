@@ -1,4 +1,6 @@
 // import {closeModal} from "./uploadEditor.js";
+import {sendData} from './api.js';
+
 
 const HASHTAG = {
   MIN: 2,
@@ -15,7 +17,7 @@ const comment = textInputs.querySelector('.text__description')
 
 
 
-const validity = () => {
+// const validity = () => {
   hashtag.input = '';
   comment.value = '';
   hashtag.style.border = "none"
@@ -51,7 +53,6 @@ const validity = () => {
         hashtag.style.border = "none"
       }
     }
-
     hashtag.reportValidity();
   })
 
@@ -64,6 +65,25 @@ const validity = () => {
       comment.style.border = "none"
     }
   })
+// }
+
+// export {validity}
+
+
+const imgUploadForm = document.querySelector('.img-upload__form')
+
+const setUserFormSubmit = (onSuccess, onFail) => {
+  imgUploadForm.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    sendData(
+      () => onSuccess(),
+      () => onFail(),
+      new FormData(evt.target),
+    );
+  })
 }
 
-export {validity}
+
+export {setUserFormSubmit};
+
+

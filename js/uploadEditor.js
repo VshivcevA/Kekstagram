@@ -1,4 +1,4 @@
-import {validity} from './validity.js'
+// import {validity} from './validity.js'
 
 const Scale = {
   MAX: 100,
@@ -10,6 +10,7 @@ const uploadFile = document.querySelector('#upload-file');
 const imgUploadOverlay = document.querySelector('.img-upload__overlay')
 const body = document.querySelector('body')
 const imgUploadPreview = imgUploadOverlay.querySelector('.img-upload__preview img')
+const imgUploadCancel = imgUploadOverlay.querySelector('.img-upload__cancel')
 
 const uploadEditor = () => {
   uploadFile.addEventListener('change', function () {
@@ -17,24 +18,22 @@ const uploadEditor = () => {
 
     imgScale()
     effects()
-    validity()
-    closeModal()
+    // validity()
+    // closeModal()
   })
 }
 
 const openModal = () => {
   imgUploadOverlay.classList.remove('hidden')
   body.classList.add('modal-open');
+  imgUploadCancel.addEventListener('click', function () {
+    closeModal()
+  })
 }
 
 const closeModal = () => {
-
-  const imgUploadCancel = imgUploadOverlay.querySelector('.img-upload__cancel')
-  imgUploadCancel.addEventListener('click', function () {
     imgUploadOverlay.classList.add('hidden')
     body.classList.remove('modal-open');
-
-  })
   document.addEventListener('keydown', function (evt) {
     if (evt.keyCode === 27) {
       evt.preventDefault()
@@ -91,7 +90,6 @@ const effects = () => {
   const sliderElement = effectLevelSlider.querySelector('.effect-level__slider')
   const valueElement = effectLevelSlider.querySelector('.effect-level__value');
 
-  valueElement.value = 100;
 
   imgUploadPreview.style.filter = "none"
   effectLevelSlider.classList.add('hidden')
@@ -129,7 +127,7 @@ const effects = () => {
   }
 
   sliderElement.noUiSlider.on('update', (values, handle) => {
-    valueElement.value = values[handle];
+    valueElement.value = sliderElement.noUiSlider.get()
     styleFilter()
   })
 
@@ -182,4 +180,4 @@ const effects = () => {
     }
   });
 }
-export { uploadEditor }
+export { uploadEditor, openModal, closeModal}

@@ -61,6 +61,6 @@ const show = (picture) => {
   closeModal()
 };
 
-export { show }
+export { show, openModal }
 
 
