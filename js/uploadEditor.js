@@ -126,7 +126,7 @@ const effects = () => {
     }
   }
 
-  sliderElement.noUiSlider.on('update', (values, handle) => {
+  sliderElement.noUiSlider.on('update', () => {
     valueElement.value = sliderElement.noUiSlider.get()
     styleFilter()
   })

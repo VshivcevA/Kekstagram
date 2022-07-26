@@ -40,6 +40,7 @@ const getData = (onSuccess) => {
     .then((response) => response.json())
     .then((photos) => {
       newPreview(photos)
+      onSuccess(photos)
     });
 };
 
