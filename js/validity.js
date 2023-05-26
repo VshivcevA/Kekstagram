@@ -33,20 +33,20 @@ const comment = textInputs.querySelector('.text__description')
     let hashtags = hashtag.value.split(/\s+/)
     for (let tag of hashtags) {
       if (tag[0] !== "#") {
-        hashtag.setCustomValidity('Хэш-тег должен начинаться с \'#\'')
+        hashtag.setCustomValidity('The hash-tag should begin with \'#\'')
         hashtag.style.border = 'solid red 3px'
         } else if (tag === "#") {
-        hashtag.setCustomValidity('Хэш-тег не может состоять только из одной \'#\'')
+        hashtag.setCustomValidity('Hash-tag cannot consist of only one \'#\'')
         hashtag.style.border = 'solid red 3px'
         // } else if (tag[0]!==tag.match(/[#@$,-]/)) {//додумать
         // hashtag.setCustomValidity('Хэш-тег не может содержать \'#, @, $, `,` ,-\'')
         // hashtag.style.border = 'solid red 3px'
       } else
         if (tag.length < HASHTAG.MIN) {
-        hashtag.setCustomValidity('Хэш-тег должен состоять минимум из 2-х символов')
+        hashtag.setCustomValidity('The hash-tag should consist of a minimum of 2 characters')
         hashtag.style.border = 'solid red 3px'
       } else if (tag.length > HASHTAG.MAX) {
-        hashtag.setCustomValidity('Хэш-тег не должен превышать 20 символов')
+        hashtag.setCustomValidity('Hash-tag should not exceed 20 characters')
         hashtag.style.border = 'solid red 3px'
       } else {
         hashtag.setCustomValidity('');
@@ -58,7 +58,7 @@ const comment = textInputs.querySelector('.text__description')
 
   comment.addEventListener('input', () => {
     if (comment.value.length > COMMENT.MAX) {
-      comment.setCustomValidity('Комментарий не должен превышать 140 символов')
+      comment.setCustomValidity('The comment should not exceed 140 characters')
       comment.style.border = 'solid red 3px'
     } else {
       comment.setCustomValidity('');

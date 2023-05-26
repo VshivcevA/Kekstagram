@@ -1,2 +1,2 @@
 # kekstagram
-Учебный проект HTML Academy JS
+HTML Academy JS Technical Project
