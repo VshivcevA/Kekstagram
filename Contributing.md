@@ -1,6 +1,6 @@
 # Adjustment Management Guide 
 
- Support your repository updated. When the mentor accepts your Pulrekvest, he gets to the Academy’s repository, but not to your Fork. 
+ Support your repository updated. When the mentor accepts your Pull Request, he gets to the Academy’s repository, but not to your Fork. 
 
  #### 1. Do not commend anything yourself in `Master 'your repository 
 
