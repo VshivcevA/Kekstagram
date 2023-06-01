@@ -1,2 +1,3 @@
 # kekstagram
-Учебный проект HTML Academy JS
+HTML Academy JS Technical Project
+**Demo:** https://kekstagram-two.vercel.app/

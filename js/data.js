@@ -12,28 +12,28 @@ const Comments = {
 };
 
 const MESSAGES= [
-  'Всё отлично!',
-  'В целом всё неплохо. Но не всё.',
-  'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
-  'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
-  'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
-  'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
+  'Everything is fine!', 
+   'In general, everything is not bad. But not all.', 
+   'When you take a photo, it would be nice to remove the finger from the frame. In the end, this is just unprofessional. ', 
+   'My grandmother accidentally sneezed with a camera in her hands and she got a photo better.',
+   'I slipped on the banana peel and dropped the camera on the cat and I got a photo better.', 
+   'The faces of people in the photo are skewed, as if they were beaten. How could you catch such an unsuccessful moment?! '
 ];
 const NAMES = [
-  'Александр',
-  'Евгений',
-  'Анастасия',
-  'Мария',
-  'Федор',
-  'Ольга'
+  'Alexander', 
+   'Eugene', 
+   'Anastasia', 
+   'Maria', 
+   'Fedor', 
+   'Olga'
 ];
 const DESCRIPTION_PHOTO= [
-  'Без фильтров',
-  'Новая камера',
-  'Зацените фотку!',
-  'Хороший ракурс',
-  'Просто так',
-  'Из архива',
+  'Without filters', 
+   'New camera', 
+   'Check out the photo!',
+   'Good angle', 
+   'Just', 
+   'From the archive',
 ];
 
 let commentId = 0;

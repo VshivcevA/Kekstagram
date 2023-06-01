@@ -1,42 +1,42 @@
-# Руководство по внесению изменений
+# Adjustment Management Guide 
 
-Поддерживайте ваш репозиторий обновлённым. Когда наставник принимает ваш пулреквест, он попадает в репозиторий Академии, но не в ваш форк.
+ Support your repository updated. When the mentor accepts your Pull Request, he gets to the Academy’s repository, but not to your Fork. 
 
-#### 1. Не коммитьте ничего самостоятельно в `master` вашего репозитория
+ #### 1. Do not commend anything yourself in `Master 'your repository 
 
-Это помешает вам аккуратно обновлять ваш репозиторий, могут возникнуть конфликты.
+ This will prevent you from gently update your repository, conflicts may arise. 
 
-#### 2. Прежде чем приступать к новому заданию, обновите `master`
+ #### 2. Before proceeding to a new task, update `master` 
 
-Обновить свой репозиторий из репозитория Академии можно так:
+ You can update your repository from the Academy repository as follows: 
 
-```
-# В вашей локальной копии переключитесь в ветку master
-git checkout master
+ `` ` 
+ # In your local copy, switch to Master branch 
+ Git Checkout Master 
 
-# Заберите изменения из репозитория Академии¹
-git pull academy master
+ # Take changes from the Academy repository¹ 
+ Git Pull Academy Master 
 
-# Отправьте изменения в ваш форк на Гитхабе
-git push
-```
+ # Send Changes to your Fork at Hithabe 
+ Git Push 
+ `` ` 
 
-¹ В `academy` должна быть ссылка на репозиторий Академии. Если его там нет, добавьте:
+ ¹ In `Academy` there should be a link to the Academy repository. If he is not there, add: 
 
-```
-git remote add academy {{sshUrl}}
-```
+ `` ` 
+ Git Remote Add Academy {{sshurl}} 
+ `` ` 
 
-Когда вы обновили `master`, создайте ветку для нового задания:
+ When you updated `Master ', create a branch for a new task: 
 
-```
-git checkout -b module2-task1
-```
+ `` ` 
+ Git Checkout -b Module2 -Task1 
+ `` ` 
 
-`module2-task1` — это название ветки. Под описанием каждого задания в интерфейсе интенсива для вас будет указано правильное название ветки.
+ `Module2-Task1`-this is the name of the branch. Under the description of each task in the intensity interface, the correct name of the branch will be indicated for you. 
 
---
+ - 
 
-#### Есть вопрос?
+ #### Is there a question? 
 
-Посмотрите [коллекцию часто задаваемых вопросов по Git](http://firstaidgit.ru).
+ Look [a collection of frequently asked questions on Git] (http://firstaidgit.ru).

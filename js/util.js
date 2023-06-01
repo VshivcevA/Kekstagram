@@ -26,7 +26,7 @@ const shuffleArray = (arr) => {
   return arr;
 }
 
-// таймаут запроса
+// Request Timout
 const DEBOUNCE_INTERVAL = 500
 
 const debounce = (cb) => {
